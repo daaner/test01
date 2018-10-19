@@ -1,0 +1,29 @@
+$side_xlg: 200px !default;
+
+.main {
+  flex: 1;
+}
+
+@media (min-width: 1200px + 2 * $side_xlg) {
+  .side-left, .side-right {
+    position: absolute;
+    width: $side_xlg;
+    flex-basis: $side_xlg;
+  }
+
+  .side-left {
+    left: 0;
+    margin-left: - $side_xlg;
+  }
+
+  .side-right {
+    text-align: center;
+    right: 0;
+    margin-right: - $side_xlg;
+  }
+
+  .main {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

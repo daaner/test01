@@ -1,0 +1,86 @@
+.dropdown {
+  position: relative;
+
+  &.clear > a {
+    padding-left: $spacer /2;
+    padding-right: $spacer /2;
+  }
+
+  &:not(.clear) {
+    &.show > a:after {
+      transform: scaleY(-1);
+    }
+
+    & > a {
+      padding-right: $btn-padding-side *1.5!important;
+      position: relative;
+
+      &:after {
+        content: '';
+        -webkit-mask: url('/images/svg/chevron_down.svg') no-repeat 50% 50%;
+        mask: url('/images/svg/chevron_down.svg') no-repeat 50% 50%;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-color: currentColor;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        top: 50%;
+        right: 0.5em;
+        margin-top: -0.6em;
+        transition: transform 0.3s;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 2.5em;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 250px;
+    padding: 0;
+    background-color: $bg-gray;
+
+    .separator {
+      margin: $spacer /2;
+      border-bottom: 1px solid $light-gray;
+    }
+
+    li a {
+      padding: 0.5em $spacer;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($bg-gray, 5%);
+      }
+    }
+  }
+
+  &.show .dropdown-menu {
+    box-shadow: 0px 2px 5px 1px darken($bg-gray, 20%);
+    height: auto;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 736px) {
+    position: inherit;
+    flex-direction: column;
+    .dropdown-menu {
+      position: absolute;
+      width: 100%;
+      top: 3.5em;
+
+      li a {
+        padding-top: $spacer *0.8;
+        padding-bottom: $spacer *0.8;
+      }
+
+    }
+  }
+}

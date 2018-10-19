@@ -1,0 +1,51 @@
+.block-flex {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.block-flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.block500 {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block50p {
+  width: 50%;
+  flex-basis: 50%;
+}
+
+.block100p {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.block-right {
+  justify-content: flex-end;
+}
+
+.block-center {
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+@media screen and (max-width: 736px) {
+  .block500,
+  .block50p {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+// Variables
+@import 'variables';
+
+// @import 'scss/variables';
+
+//add colors array '$colors_palette'
+@import 'main/colors';
+
+@import 'main/normalize';
+@import 'main/fix';
+
+//custom fonts
+@import 'fonts';
+
+//main
+@import 'main';

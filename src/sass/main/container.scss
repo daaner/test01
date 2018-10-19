@@ -1,0 +1,22 @@
+.container,
+.container-fluid {
+  display: flex;
+  width: 100%;
+  flex-direction: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: $padding;
+  padding-left: $padding;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: (1170px - $padding *2);
+  }
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+}
